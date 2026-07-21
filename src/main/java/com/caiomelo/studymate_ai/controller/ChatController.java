@@ -14,7 +14,7 @@ public class ChatController {
     private final ChatService chatService;
 
     @PostMapping
-    public ChatResponse chat(@RequestBody ChatRequest request) {
+    public ChatResponse chat(@Valid @RequestBody ChatRequest request) {
         String response = chatService.chat(
                 request.getSessionId(),
                 request.getMessage()
